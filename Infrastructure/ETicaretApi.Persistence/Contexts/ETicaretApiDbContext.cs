@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ETicaretApi.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +8,13 @@ using System.Threading.Tasks;
 
 namespace ETicaretApi.Persistence.Contexts
 {
-    internal class ETicaretApiDbContext : DbContext
+    public class ETicaretApiDbContext : DbContext
     {
+        public ETicaretApiDbContext(DbContextOptions options) : base(options) { }
+
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Customer> Custmers { get; set; }
 
     }
 }
