@@ -1,1 +1,2 @@
 ETicaretApi
+Onion Architecture Practices
